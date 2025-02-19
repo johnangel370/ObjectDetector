@@ -1,0 +1,27 @@
+[project]
+name = "objectdetector"
+version = "0.1.0"
+authors = [{name = "Chung En Chen", email = "johnangel370@gmail.com"}]
+description = "This project uses YOLOv8 to detect objects"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "opencv-python>=4.11.0.86",
+    "torch>=2.6.0",
+    "torchvision>=0.21.0",
+    "ultralytics>=8.3.76",
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu118", marker = "platform_system != 'Darwin'" },
+]
+torchvision = [
+  { index = "pytorch-cu118", marker = "platform_system != 'Darwin'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
+

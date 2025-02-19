@@ -1,0 +1,29 @@
+# This yaml file is a default setting for yolo model, you can customize your own settings here
+
+
+# Model settings ===============================================================
+model:
+  model_path:  # (str) insert your model path here, ex: .\model\yolov8m_seg_1280_b4_woPothole.pt
+  model_fuse: True # (bool) Fuses Conv2d and BatchNorm2d layers in the model. This method optimizes the model by fusing Conv2d and BatchNorm2d layers, which can improve inference speed.
+  destination: # (str, optional) destination directory for images or videos of the predicting results
+
+# Predict settings =============================================================
+predict:
+  source:   # (str, optional) source directory for images or videos
+  classes:  # (int | list[int], optional) filter results by class, i.e. classes=0, or classes=[0,2,3]
+  iou: # (float, optional) | numbers between 0.0 ~ 1.0
+  conf: # (float, optional) object confidence threshold for detection (default 0.25 predict, 0.001 val)
+  save_json: False # (bool) save results to JSON file
+  max_det: # (int) maximum number of detections per image
+
+# Visualize settings ===========================================================
+visual:
+  show: False # (bool) show predicted images and videos if environment allows
+  save_frames: False # (bool) save predicted individual video frames
+  save_txt: False # (bool) save results as .txt file
+  save_conf: False # (bool) save results with confidence scores
+  save_crop: False # (bool) save cropped images with results
+  show_labels: True # (bool) show prediction labels, i.e. 'person'
+  show_conf: True # (bool) show prediction confidence, i.e. '0.99'
+  show_boxes: True # (bool) show prediction boxes
+  line_width: # (int, optional) line width of the bounding boxes. Scaled to image size if None.
